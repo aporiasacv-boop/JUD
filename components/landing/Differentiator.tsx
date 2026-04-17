@@ -77,8 +77,8 @@ export function Differentiator() {
                     Línea de principios JUDEYCO
                   </p>
                   <p className="mt-1 text-sm text-judey-muted">
-                    Texto editorial de respaldo; aquí podrá ubicarse una cita
-                    institucional o del titular.
+                    Cita
+                    institucional
                   </p>
                 </footer>
               </blockquote>
