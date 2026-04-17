@@ -42,9 +42,9 @@ export function Footer() {
               Contacto
             </p>
             <ul className="mt-4 space-y-2 text-sm text-judey-muted">
-              <li>+52 55 0000 0000</li>
+              <li>+52 735 116 2329</li>
               <li>contacto@judeyco.ejemplo</li>
-              <li>Ciudad de México</li>
+              <li>Cuautla, Morelos</li>
             </ul>
             <ul className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-xs text-judey-muted/90">
               <li>

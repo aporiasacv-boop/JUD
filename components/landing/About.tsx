@@ -23,8 +23,7 @@ export function About() {
                     Retrato / oficina
                   </p>
                   <p className="mt-2 text-sm text-judey-muted">
-                    Área reservada para fotografía cálida y sobria del equipo o
-                    del consultorio.
+                    Fotografía del equipo o instalaciones"
                   </p>
                 </div>
               </div>
@@ -55,7 +54,7 @@ export function About() {
               necesitan cuando el tema es sensible.
             </p>
             <p className="mt-4 text-base leading-relaxed text-judey-muted">
-              Atendemos desde la ciudad de México y entornos cercanos, con
+              Atendemos desde cuautla, Morelos y entornos cercanos, con
               canales presenciales y remotos. Cada caso recibe atención
               directa, sin pasos innecesarios ni promesas vacías.
             </p>

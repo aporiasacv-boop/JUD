@@ -73,7 +73,7 @@ export function Contact() {
                     Oficina
                   </p>
                   <p className="mt-1 text-sm leading-relaxed text-judey-muted">
-                    Col. Condesa, Ciudad de México
+                    Col. Centro, Cuautla, Morelos
                     <br />
                     <span className="text-judey-muted/80">
                       Calle y número — texto comercial por confirmar
