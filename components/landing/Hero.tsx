@@ -142,9 +142,7 @@ export function Hero() {
                   Espacio para imagen editorial
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-judey-muted">
-                  Aquí irá fotografía de consultorio o retrato profesional con
-                  tono cálido. Por ahora, composición abstracta para mantener
-                  la elegancia del layout.
+                  Fotografía de consultorio o retrato profesional.
                 </p>
                 <div className="mt-4 h-px w-16 bg-judey-gold/40" />
                 <p className="mt-4 text-xs uppercase tracking-widest text-judey-gold/90">
