@@ -23,7 +23,7 @@ export function About() {
                     Retrato / oficina
                   </p>
                   <p className="mt-2 text-sm text-judey-muted">
-                    Fotografía del equipo o instalaciones"
+                    Fotografía del equipo o instalaciones
                   </p>
                 </div>
               </div>

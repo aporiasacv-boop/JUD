@@ -85,7 +85,7 @@ export function Differentiator() {
             </div>
             <p className="mt-6 text-sm leading-relaxed text-judey-muted">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
-              perspiciatis unde omnis iste natus error sit voluptatem "cita de Judeyco o alguna legal que quieras usar"
+              perspiciatis unde omnis iste natus error sit voluptatem “cita de Judeyco o alguna legal que quieras usar”
             </p>
           </FadeIn>
         </div>
