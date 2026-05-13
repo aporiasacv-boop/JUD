@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { BadgeCheck, Shield, Sparkles } from "lucide-react";
+import { ArrowRight, BadgeCheck, Shield, Sparkles } from "lucide-react";
+import { ScalesArtwork } from "./LegalArtwork";
 
 export function Hero() {
   return (
@@ -15,73 +16,109 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 bg-hero-mesh bg-grain-soft"
         aria-hidden
       />
-      <div
+      <motion.div
         className="pointer-events-none absolute -right-32 top-24 h-[420px] w-[420px] rounded-full bg-judey-gold/5 blur-3xl"
         aria-hidden
+        animate={{ scale: [1, 1.08, 1], opacity: [0.6, 0.9, 0.6] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
-      <div
+      <motion.div
         className="pointer-events-none absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-judey-blue/40 blur-3xl"
         aria-hidden
+        animate={{ scale: [1, 1.15, 1], opacity: [0.5, 0.8, 0.5] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       />
 
       <div className="relative mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16 lg:px-8 lg:py-24">
         <div>
-          <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-judey-gold/20 bg-judey-blue/30 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-judey-gold">
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-4 inline-flex items-center gap-2 rounded-full border border-judey-gold/20 bg-judey-blue/30 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-judey-gold"
+          >
             <Sparkles className="h-3.5 w-3.5" aria-hidden />
             Despacho jurídico · México
-          </p>
-          <h1
+          </motion.p>
+          <motion.h1
             id="hero-heading"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.05 }}
             className="font-serif text-4xl font-medium leading-[1.08] tracking-tight text-judey-cream text-balance sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem]"
           >
-            Recuperamos lo que te pertenece con estrategia, claridad y respaldo
-            legal.
-          </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-judey-muted sm:text-xl">
+            Recuperamos lo que te pertenece con{" "}
+            <span className="bg-gradient-to-r from-judey-gold via-[#EBD9B5] to-judey-gold bg-clip-text text-transparent">
+              estrategia, claridad y respaldo legal
+            </span>
+            .
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.12 }}
+            className="mt-6 max-w-xl text-lg leading-relaxed text-judey-muted sm:text-xl"
+          >
             Acompañamos a personas, empresas y emprendedores en cobranza,
             recuperación de bienes y asesoría jurídica cercana, con un enfoque
             ordenado y orientado a resultados.
-          </p>
+          </motion.p>
 
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center"
+          >
             <Link
               href="#contacto"
-              className="inline-flex min-h-[48px] min-w-[min(100%,200px)] items-center justify-center rounded-2xl bg-judey-gold px-8 py-3.5 text-center text-base font-semibold text-judey-navy shadow-glow transition hover:scale-[1.02] hover:shadow-[0_0_40px_-6px_rgba(215,194,154,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-judey-gold"
-              onClick={() => {
-                // TODO(analytics): CTA primario hero — Agenda / contacto
-              }}
+              className="group relative inline-flex min-h-[48px] min-w-[min(100%,200px)] items-center justify-center gap-2 overflow-hidden rounded-2xl bg-judey-gold px-8 py-3.5 text-center text-base font-semibold text-judey-navy shadow-glow transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-[#E8D4A8] hover:shadow-[0_0_40px_-6px_rgba(215,194,154,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-judey-gold active:scale-[0.98]"
             >
-              Agenda una consulta
+              <span className="relative z-10">Agenda una consulta</span>
+              <ArrowRight
+                className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                aria-hidden
+              />
+              <span
+                aria-hidden
+                className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 group-hover:translate-x-full"
+              />
             </Link>
             <Link
               href="#servicios"
-              className="inline-flex min-h-[48px] min-w-[min(100%,200px)] items-center justify-center rounded-2xl border border-judey-gold/25 bg-judey-blue/20 px-8 py-3.5 text-center text-base font-semibold text-judey-cream transition hover:border-judey-gold/45 hover:bg-judey-blue/35 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-judey-gold/60"
-              onClick={() => {
-                // TODO(analytics): CTA secundario hero — Servicios
-              }}
+              className="group inline-flex min-h-[48px] min-w-[min(100%,200px)] items-center justify-center gap-2 rounded-2xl border border-judey-gold/30 bg-judey-blue/20 px-8 py-3.5 text-center text-base font-semibold text-judey-cream backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-judey-gold hover:bg-judey-blue/55 hover:text-judey-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-judey-gold/60"
             >
               Ver servicios
+              <ArrowRight
+                className="h-4 w-4 opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
+                aria-hidden
+              />
             </Link>
-          </div>
+          </motion.div>
 
-          <ul className="mt-12 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-x-10 sm:gap-y-3">
-            <li className="flex items-center gap-3 text-sm text-judey-muted">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-judey-gold/15 bg-judey-blue/25 text-judey-gold">
+          <motion.ul
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="mt-12 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-x-10 sm:gap-y-3"
+          >
+            <li className="group flex items-center gap-3 text-sm text-judey-muted">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-judey-gold/15 bg-judey-blue/25 text-judey-gold transition-all duration-300 group-hover:scale-110 group-hover:border-judey-gold/45 group-hover:bg-judey-gold/15 group-hover:text-judey-gold">
                 <Shield className="h-5 w-5" aria-hidden />
               </span>
-              <span className="max-w-[14rem] leading-snug text-judey-cream/90">
+              <span className="max-w-[14rem] leading-snug text-judey-cream/90 transition-colors group-hover:text-judey-cream">
                 Legitimidad y criterio técnico en cada etapa.
               </span>
             </li>
-            <li className="flex items-center gap-3 text-sm text-judey-muted">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-judey-gold/15 bg-judey-blue/25 text-judey-gold">
+            <li className="group flex items-center gap-3 text-sm text-judey-muted">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-judey-gold/15 bg-judey-blue/25 text-judey-gold transition-all duration-300 group-hover:scale-110 group-hover:border-judey-gold/45 group-hover:bg-judey-gold/15">
                 <BadgeCheck className="h-5 w-5" aria-hidden />
               </span>
-              <span className="max-w-[14rem] leading-snug text-judey-cream/90">
+              <span className="max-w-[14rem] leading-snug text-judey-cream/90 transition-colors group-hover:text-judey-cream">
                 Comunicación clara: siempre sabes qué sigue.
               </span>
             </li>
-          </ul>
+          </motion.ul>
         </div>
 
         <motion.div
@@ -90,68 +127,45 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
           className="relative"
         >
-          <div className="relative overflow-hidden rounded-2xl border border-judey-gold/15 bg-gradient-to-br from-judey-blue/80 to-judey-navy shadow-card">
-            <div className="absolute inset-0 opacity-[0.35]">
-              <svg
-                className="h-full w-full"
-                viewBox="0 0 400 480"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                preserveAspectRatio="xMidYMid slice"
-              >
-                <defs>
-                  <linearGradient
-                    id="heroStroke"
-                    x1="0"
-                    y1="0"
-                    x2="400"
-                    y2="480"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#D7C29A" stopOpacity="0.35" />
-                    <stop offset="1" stopColor="#D7C29A" stopOpacity="0.05" />
-                  </linearGradient>
-                </defs>
-                {[0, 1, 2, 3, 4, 5].map((i) => (
-                  <line
-                    key={i}
-                    x1={40 + i * 56}
-                    y1="0"
-                    x2={120 + i * 48}
-                    y2="480"
-                    stroke="url(#heroStroke)"
-                    strokeWidth="0.5"
-                  />
-                ))}
-                <rect
-                  x="48"
-                  y="64"
-                  width="304"
-                  height="200"
-                  rx="16"
-                  stroke="#D7C29A"
-                  strokeOpacity="0.12"
-                  fill="#062C43"
-                  fillOpacity="0.4"
-                />
-              </svg>
+          <motion.div
+            whileHover={{ y: -6, rotateX: 2, rotateY: -2 }}
+            transition={{ type: "spring", stiffness: 200, damping: 20 }}
+            className="relative overflow-hidden rounded-2xl border border-judey-gold/20 bg-gradient-to-br from-judey-blue/80 to-judey-navy shadow-card"
+            style={{ perspective: 1000 }}
+          >
+            <div className="aspect-[4/5] w-full">
+              <ScalesArtwork />
             </div>
-            <div className="relative flex aspect-[4/5] flex-col justify-end p-8 sm:p-10">
-              <div className="max-w-sm rounded-2xl border border-judey-gold/20 bg-judey-navy/75 p-6 backdrop-blur-md">
-                <p className="font-serif text-lg text-judey-cream">
-                  Espacio para imagen editorial
+            <div className="absolute inset-x-0 bottom-0 flex flex-col gap-3 p-6 sm:p-8">
+              <div className="rounded-2xl border border-judey-gold/25 bg-judey-navy/85 p-5 backdrop-blur-md">
+                <p className="font-serif text-lg leading-snug text-judey-cream">
+                  Iustitia · Equidad y orden
                 </p>
-                <p className="mt-2 text-sm leading-relaxed text-judey-muted">
-                  Fotografía de consultorio o retrato profesional.
+                <p className="mt-2 text-xs leading-relaxed text-judey-muted">
+                  Cada caso, una balanza distinta. Cada cliente, una historia
+                  que merece ser escuchada con seriedad.
                 </p>
-                <div className="mt-4 h-px w-16 bg-judey-gold/40" />
-                <p className="mt-4 text-xs uppercase tracking-widest text-judey-gold/90">
+                <div className="mt-3 h-px w-16 bg-judey-gold/50" />
+                <p className="mt-3 text-[0.65rem] uppercase tracking-[0.25em] text-judey-gold/90">
                   JUDEYCO
                 </p>
               </div>
             </div>
-          </div>
-          <div className="pointer-events-none absolute -bottom-6 -left-6 h-24 w-24 rounded-2xl border border-judey-gold/10 bg-judey-blue/20" />
+          </motion.div>
+          <motion.div
+            aria-hidden
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="pointer-events-none absolute -bottom-6 -left-6 h-24 w-24 rounded-2xl border border-judey-gold/15 bg-judey-blue/25 backdrop-blur-sm"
+          />
+          <motion.div
+            aria-hidden
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="pointer-events-none absolute -top-4 -right-4 h-16 w-16 rounded-full border border-judey-gold/20 bg-judey-gold/5"
+          />
         </motion.div>
       </div>
     </section>

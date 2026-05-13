@@ -28,57 +28,48 @@ export function Differentiator() {
               minimizar lo que está en juego.
             </p>
             <ul className="mt-8 space-y-4 text-judey-muted">
-              <li className="flex gap-3">
-                <span
-                  className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-judey-gold/80"
-                  aria-hidden
-                />
-                <span>
-                  Claridad en cada etapa: sabrás qué esperar, en qué orden y con
-                  qué documentos.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span
-                  className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-judey-gold/80"
-                  aria-hidden
-                />
-                <span>
-                  Enfoque en negocios locales: lenguaje y tiempos alineados con
-                  la realidad de PyMEs y emprendedores.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span
-                  className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-judey-gold/80"
-                  aria-hidden
-                />
-                <span>
-                  Criterio en recuperación: priorizamos rutas eficientes sin
-                  perder de vista la tutela judicial adecuada.
-                </span>
-              </li>
+              {[
+                "Claridad en cada etapa: sabrás qué esperar, en qué orden y con qué documentos.",
+                "Enfoque en negocios locales: lenguaje y tiempos alineados con la realidad de PyMEs y emprendedores.",
+                "Criterio en recuperación: priorizamos rutas eficientes sin perder de vista la tutela judicial adecuada.",
+              ].map((text) => (
+                <li
+                  key={text}
+                  className="group flex gap-3 rounded-lg p-2 transition-all duration-300 hover:bg-judey-blue/20"
+                >
+                  <span
+                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-judey-gold/80 transition-all duration-300 group-hover:h-2 group-hover:w-2 group-hover:bg-judey-gold group-hover:shadow-[0_0_10px_rgba(215,194,154,0.8)]"
+                    aria-hidden
+                  />
+                  <span className="transition-colors duration-300 group-hover:text-judey-cream">
+                    {text}
+                  </span>
+                </li>
+              ))}
             </ul>
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <div className="relative overflow-hidden rounded-2xl border border-judey-gold/15 bg-gradient-to-br from-judey-blue/50 to-judey-navy p-8 shadow-card sm:p-10">
+            <div className="group relative overflow-hidden rounded-2xl border border-judey-gold/15 bg-gradient-to-br from-judey-blue/50 to-judey-navy p-8 shadow-card transition-all duration-500 hover:-translate-y-1 hover:border-judey-gold/45 hover:shadow-[0_30px_60px_-20px_rgba(215,194,154,0.25)] sm:p-10">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-judey-gold/0 blur-3xl transition-all duration-700 group-hover:bg-judey-gold/15"
+              />
               <Quote
-                className="absolute right-6 top-6 h-16 w-16 text-judey-gold/10"
+                className="absolute right-6 top-6 h-16 w-16 text-judey-gold/15 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:text-judey-gold/30"
                 aria-hidden
               />
               <blockquote className="relative">
-                <p className="font-serif text-xl leading-relaxed text-judey-cream sm:text-2xl">
-                  “La confianza no se declara: se construye con respuestas
-                  oportunas, trato respetuoso y estrategia sensata.”
+                <p className="font-serif text-xl leading-relaxed text-judey-cream transition-colors duration-300 group-hover:text-white sm:text-2xl">
+                  &ldquo;La confianza no se declara: se construye con respuestas
+                  oportunas, trato respetuoso y estrategia sensata.&rdquo;
                 </p>
-                <footer className="mt-8 border-t border-judey-gold/15 pt-6">
+                <footer className="mt-8 border-t border-judey-gold/20 pt-6">
                   <p className="text-sm font-medium text-judey-gold">
                     Línea de principios JUDEYCO
                   </p>
                   <p className="mt-1 text-sm text-judey-muted">
-                    Cita
-                    institucional
+                    Cita institucional
                   </p>
                 </footer>
               </blockquote>

@@ -45,10 +45,16 @@ export function Navbar() {
       <div className="mx-auto flex h-[4.25rem] max-w-6xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link
           href="#inicio"
-          className="font-serif text-xl tracking-tight text-judey-cream transition-colors hover:text-judey-gold sm:text-2xl"
+          className="group relative font-serif text-xl tracking-tight text-judey-cream transition-all duration-300 hover:text-judey-gold sm:text-2xl"
           onClick={() => setOpen(false)}
         >
-          JUDEYCO
+          <span className="relative">
+            JUDEYCO
+            <span
+              aria-hidden
+              className="absolute -bottom-1 left-0 h-px w-0 bg-judey-gold transition-all duration-500 group-hover:w-full"
+            />
+          </span>
         </Link>
 
         <nav
@@ -59,9 +65,13 @@ export function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-judey-muted transition-colors hover:text-judey-cream"
+              className="group relative text-sm font-medium text-judey-muted transition-colors duration-300 hover:text-judey-cream"
             >
               {item.label}
+              <span
+                aria-hidden
+                className="absolute -bottom-1.5 left-1/2 h-px w-0 -translate-x-1/2 bg-judey-gold transition-all duration-300 group-hover:w-full"
+              />
             </Link>
           ))}
         </nav>
@@ -69,12 +79,16 @@ export function Navbar() {
         <div className="hidden md:block">
           <Link
             href="#contacto"
-            className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-2xl bg-judey-gold px-5 py-2.5 text-sm font-semibold text-judey-navy shadow-glow transition hover:scale-[1.02] hover:shadow-[0_0_32px_-4px_rgba(215,194,154,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-judey-gold"
+            className="group relative inline-flex min-h-[44px] min-w-[44px] items-center justify-center overflow-hidden rounded-2xl bg-judey-gold px-5 py-2.5 text-sm font-semibold text-judey-navy shadow-glow transition-all duration-300 hover:scale-[1.05] hover:bg-[#E8D4A8] hover:shadow-[0_0_32px_-4px_rgba(215,194,154,0.55)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-judey-gold"
             onClick={() => {
               // TODO(analytics): evento CTA navbar — Contáctanos
             }}
           >
-            Contáctanos
+            <span className="relative z-10">Contáctanos</span>
+            <span
+              aria-hidden
+              className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 group-hover:translate-x-full"
+            />
           </Link>
         </div>
 

@@ -1,6 +1,8 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { FadeIn } from "./FadeIn";
+import { CourthouseArtwork } from "./LegalArtwork";
 
 export function About() {
   return (
@@ -13,27 +15,32 @@ export function About() {
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-16">
           <FadeIn>
             <figure className="relative mx-auto max-w-md lg:mx-0">
-              <div
-                className="aspect-[4/5] overflow-hidden rounded-2xl border border-judey-gold/20 bg-judey-navy shadow-card"
-                aria-hidden
+              <motion.div
+                whileHover={{ y: -6, scale: 1.01 }}
+                transition={{ type: "spring", stiffness: 220, damping: 22 }}
+                className="aspect-[4/5] overflow-hidden rounded-2xl border border-judey-gold/25 bg-judey-navy shadow-card"
               >
-                <div className="flex h-full w-full flex-col items-center justify-center bg-gradient-to-b from-judey-blue/60 to-judey-navy p-8 text-center">
-                  <div className="h-28 w-28 rounded-full border border-judey-gold/25 bg-judey-blue/40" />
-                  <p className="mt-6 font-serif text-lg text-judey-cream">
-                    Retrato / oficina
-                  </p>
-                  <p className="mt-2 text-sm text-judey-muted">
-                    Fotografía del equipo o instalaciones
-                  </p>
-                </div>
-              </div>
+                <CourthouseArtwork />
+              </motion.div>
               <figcaption className="sr-only">
-                Imagen de retrato u oficina en preparación para la sección
-                nosotros.
+                Ilustración temática: fachada institucional con columnas y
+                libros de derecho.
               </figcaption>
-              <div
-                className="pointer-events-none absolute -right-4 -bottom-4 -z-10 h-40 w-40 rounded-2xl border border-judey-gold/10 bg-judey-gold/5"
+              <motion.div
                 aria-hidden
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="pointer-events-none absolute -right-4 -bottom-4 -z-10 h-40 w-40 rounded-2xl border border-judey-gold/15 bg-judey-gold/5"
+              />
+              <motion.div
+                aria-hidden
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="pointer-events-none absolute -left-4 -top-4 -z-10 h-24 w-24 rounded-full border border-judey-gold/15 bg-judey-blue/30"
               />
             </figure>
           </FadeIn>
@@ -46,7 +53,10 @@ export function About() {
               id="nosotros-heading"
               className="mt-3 font-serif text-3xl font-medium tracking-tight text-judey-cream sm:text-4xl"
             >
-              Un despacho que habla claro y camina contigo
+              Un despacho que habla claro y{" "}
+              <span className="bg-gradient-to-r from-judey-gold to-[#EBD9B5] bg-clip-text text-transparent">
+                camina contigo
+              </span>
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-judey-muted">
               En JUDEYCO acompañamos procesos de recuperación y asesoría con la
@@ -54,10 +64,31 @@ export function About() {
               necesitan cuando el tema es sensible.
             </p>
             <p className="mt-4 text-base leading-relaxed text-judey-muted">
-              Atendemos desde cuautla, Morelos y entornos cercanos, con
+              Atendemos desde Cuautla, Morelos y entornos cercanos, con
               canales presenciales y remotos. Cada caso recibe atención
               directa, sin pasos innecesarios ni promesas vacías.
             </p>
+
+            <div className="mt-8 grid grid-cols-3 gap-4 sm:gap-6">
+              {[
+                { number: "+10", label: "Años de experiencia jurídica" },
+                { number: "100%", label: "Casos con plan estructurado" },
+                { number: "24h", label: "Tiempo de respuesta hábil" },
+              ].map((stat) => (
+                <div
+                  key={stat.label}
+                  className="group rounded-2xl border border-judey-gold/15 bg-judey-navy/40 p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:border-judey-gold/40 hover:bg-judey-navy/70 hover:shadow-glow sm:p-5"
+                >
+                  <p className="font-serif text-2xl text-judey-gold transition-colors group-hover:text-[#EBD9B5] sm:text-3xl">
+                    {stat.number}
+                  </p>
+                  <p className="mt-1 text-[0.7rem] leading-tight text-judey-muted sm:text-xs">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+
             <p className="mt-10 font-serif text-lg italic text-judey-cream/90">
               — Con rigor, con tiempo, contigo.
             </p>
